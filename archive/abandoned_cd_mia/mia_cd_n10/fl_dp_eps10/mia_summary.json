@@ -1,0 +1,23 @@
+{
+  "dp_eps10": {
+    "mta_mean": 0.1005,
+    "mta_std": 0.0003,
+    "auc_loss_mean": 0.499,
+    "auc_loss_std": 0.0009,
+    "auc_conf_mean": 0.4989,
+    "auc_conf_std": 0.001,
+    "auc_loss_perclass_mean": 0.5027,
+    "auc_loss_perclass_std": 0.0035,
+    "auc_conf_perclass_mean": 0.5011,
+    "auc_conf_perclass_std": 0.0021,
+    "member_loss_mean_mean": 10.0593,
+    "member_loss_mean_std": 2.6165,
+    "nonmember_loss_mean_mean": 11.6771,
+    "nonmember_loss_mean_std": 3.4916,
+    "member_conf_mean_mean": 0.0996,
+    "member_conf_mean_std": 0.0003,
+    "nonmember_conf_mean_mean": 0.1003,
+    "nonmember_conf_mean_std": 0.0002,
+    "n_seeds": 2
+  }
+}

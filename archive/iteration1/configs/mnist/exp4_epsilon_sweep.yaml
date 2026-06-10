@@ -1,0 +1,43 @@
+# Exp-4: Epsilon sweep. MKrum + CDP, ε ∈ {5,7,10,15,20,50,∞} × 4 attacks × 3 seeds.
+# n=200, q=0.2, m_real=40, m_assumed=12, f=28.
+# SNR at n=200: ε=5→0.147(FAIL), ε=7→0.191(MARGINAL), ε=10→0.247, ε=15→0.323,
+#               ε=20→0.385, ε=50→0.625, ε=∞→∞. Threshold ~0.19.
+# ε=20,50 results reused from Exp-1 (same defenses).
+# Only new runs: ε=5,7,10,15 × 4 attacks, plus ε=∞ as no-DP reference.
+# Run via run_exp4.sh
+name: exp4_base_mnist
+dataset: mnist
+data_dir: ./data
+alpha: 0.5
+seed: 42
+
+n_clients: 200
+clients_per_round: 40
+n_rounds: 200
+local_epochs: 5
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: multi_krum
+m_assumed: 12
+f: 28
+
+use_dp: true
+epsilon: 50.0
+delta: 1.0e-5
+dp_accounting: opacus
+sigma: null
+
+attack: random_label_flip
+m_real: 40
+
+backdoor_gamma: 20.0
+backdoor_trigger_size: 5
+backdoor_target_label: 0
+backdoor_poison_ratio: 0.5
+backdoor_epochs: 10
+
+log_every: 10
+save_dir: ./results/exp4_mnist

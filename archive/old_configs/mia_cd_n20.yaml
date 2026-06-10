@@ -1,0 +1,42 @@
+# MIA experiment on CD scenario: N=20, q=1.0, E=10, Fashion-MNIST + MicroMNIST.
+# Mirror of mia_cd_n10.yaml с увеличенным N=20: на N=10 при ε=10 σ=5.30 и
+# усреднение по 10 → шум доминировал, MTA=0.10. При N=20 σ та же, но
+# усреднение по 20 → шум на dim вдвое меньше → DP-режим должен обучаться.
+name: mia_cd_n20
+dataset: fashion_mnist
+model_name: micro
+data_dir: ./data
+alpha: 0.5
+
+n_clients: 20
+clients_per_round: 20
+n_rounds: 100
+local_epochs: 10
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: fedavg
+fedrola_chi: 0.1
+m_assumed: 12
+f: 28
+
+use_dp: false
+dp_level: client
+epsilon: 10.0
+delta: 1.0e-5
+clip_max: 2.0
+adaptive_client_clip: true
+
+attack: none
+m_real: 0
+ipm_epsilon: 0.1
+backdoor_gamma: 20.0
+backdoor_trigger_size: 5
+backdoor_target_label: 0
+backdoor_poison_ratio: 0.5
+backdoor_epochs: 10
+
+log_every: 10
+save_dir: ./results/mia_cd_n20

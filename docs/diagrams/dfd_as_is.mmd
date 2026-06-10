@@ -1,0 +1,50 @@
+%% DFD «как есть» — диаграмма потоков данных без мер защиты.
+%% Рендер: https://mermaid.live → экспорт PNG/SVG → вставка в Word.
+
+flowchart LR
+    subgraph Клиенты
+        C1[(Локальная выборка D_1)]
+        C2[(Локальная выборка D_k)]
+        CN[(Локальная выборка D_N)]
+        P1[Локальное обучение\nна клиенте 1]
+        Pk[Локальное обучение\nна клиенте k]
+        PN[Локальное обучение\nна клиенте N]
+    end
+
+    subgraph Сервер
+        AGG[Агрегация\nFedAvg]
+        MS[(Глобальная модель w_t)]
+        LOG[(Журнал обучения)]
+    end
+
+    ANALYST((Аналитик))
+    ATTACKER((Нарушитель))
+
+    C1 --> P1
+    C2 --> Pk
+    CN --> PN
+
+    MS -- w_t --> P1
+    MS -- w_t --> Pk
+    MS -- w_t --> PN
+
+    P1 -- "&#916;_1 (в открытом виде)" --> AGG
+    Pk -- "&#916;_k" --> AGG
+    PN -- "&#916;_N" --> AGG
+
+    AGG -- w_{t+1} --> MS
+    AGG --> LOG
+
+    ANALYST -- запрос метрик --> LOG
+
+    ATTACKER -. "перехват &#916;_k\n(точка утечки 1)" .-> AGG
+    ATTACKER -. "подмена &#916;_k\n(точка воздействия 1)" .-> AGG
+    ATTACKER -. "вредоносный клиент\n(точка воздействия 2)" .-> Pk
+    ATTACKER -. "доступ к индивидуальным\nобновлениям на сервере\n(точка утечки 2)" .-> AGG
+
+    classDef store fill:#f5f5f5,stroke:#555,stroke-width:1px
+    classDef process fill:#e8f0fe,stroke:#1a73e8,stroke-width:1px
+    classDef ext fill:#fff,stroke:#c00,stroke-width:1px,stroke-dasharray:5 5
+    class C1,C2,CN,MS,LOG store
+    class P1,Pk,PN,AGG process
+    class ATTACKER ext

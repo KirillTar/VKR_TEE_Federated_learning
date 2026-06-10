@@ -1,0 +1,23 @@
+{
+  "no_dp": {
+    "mta_mean": 0.8782,
+    "mta_std": 0.0,
+    "auc_loss_mean": 0.5049,
+    "auc_loss_std": 0.0,
+    "auc_conf_mean": 0.5051,
+    "auc_conf_std": 0.0,
+    "auc_loss_perclass_mean": 0.5073,
+    "auc_loss_perclass_std": 0.0,
+    "auc_conf_perclass_mean": 0.5055,
+    "auc_conf_perclass_std": 0.0,
+    "member_loss_mean_mean": 0.3335,
+    "member_loss_mean_std": 0.0,
+    "nonmember_loss_mean_mean": 0.3923,
+    "nonmember_loss_mean_std": 0.0,
+    "member_conf_mean_mean": 0.8681,
+    "member_conf_mean_std": 0.0,
+    "nonmember_conf_mean_mean": 0.8574,
+    "nonmember_conf_mean_std": 0.0,
+    "n_seeds": 1
+  }
+}

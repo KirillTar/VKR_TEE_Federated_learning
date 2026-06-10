@@ -1,0 +1,46 @@
+# Cross-device scenario: Fashion-MNIST + MicroMNIST (~4.3K params)
+# N=200, q=0.2, E=5, client-level DP
+# d=4266, SNR_MK(f=28,ε=10)=0.251, SNR_FA(n=40,ε=10)=0.359
+name: cd_base
+dataset: fashion_mnist
+model_name: micro
+data_dir: ./data
+alpha: 0.5
+seed: 42
+
+n_clients: 200
+clients_per_round: 40
+n_rounds: 200
+local_epochs: 5
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: fedrola
+m_assumed: 12
+f: 28
+trim_beta: 0.1
+fedrola_chi: 0.1
+
+use_dp: true
+dp_level: client
+epsilon: 10.0
+delta: 1.0e-5
+sigma: null
+client_clip: 1.0
+adaptive_client_clip: true
+clip_max: 2.0
+record_clip: 1.0
+
+attack: none
+m_real: 80
+ipm_epsilon: 0.1
+backdoor_gamma: 20.0
+backdoor_trigger_size: 5
+backdoor_target_label: 0
+backdoor_poison_ratio: 0.5
+backdoor_epochs: 10
+
+log_every: 10
+save_dir: ./results/cross_device

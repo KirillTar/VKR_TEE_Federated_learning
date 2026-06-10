@@ -1,0 +1,35 @@
+# Exp 5+6: Sensitivity to m_real and m_assumed (ALIE attack)
+# Slice A: m_real=4 fixed, m_assumed in {2,4,6,8,10}
+# Slice B: m_assumed=6 fixed, m_real in {0,2,4,6,8}
+# Slice C: diagonal m_real=m_assumed in {2,4,6,8}
+# Run with --override m_real=X m_assumed=Y
+
+name: exp5_sensitivity_mreal4_massumed6
+dataset: cifar10
+data_dir: ./data
+alpha: 0.5
+seed: 42
+
+n_clients: 20
+n_rounds: 200
+local_epochs: 5
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: multi_krum
+m_assumed: 6   # sweep: 2 | 4 | 6 | 8 | 10
+f: null        # auto: n - m_assumed
+
+use_dp: true
+epsilon: 4.0
+delta: 1.0e-5
+dp_accounting: opacus
+sigma: null
+
+attack: alie
+m_real: 4   # sweep: 0 | 2 | 4 | 6 | 8
+
+log_every: 10
+save_dir: ./results/exp5

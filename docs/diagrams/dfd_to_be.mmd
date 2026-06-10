@@ -1,0 +1,81 @@
+%% DFD TO-BE — декомпозиция 1-го уровня.
+%% Защищённый конвейер: FedRoLA + клиппинг + центральная ДП внутри SGX-анклава.
+%% Цвета:
+%%   серый (asis)   — процессы/хранилища/потоки, присутствовавшие в AS-IS
+%%   зелёный (new)  — НОВЫЕ элементы TO-BE (внутри и снаружи анклава)
+%%   жёлтая область — граница SGX-анклава (SCONE)
+%% Рендер: https://mermaid.live → PNG/SVG.
+
+flowchart LR
+    subgraph CLIENTS["Клиенты (снаружи анклава)"]
+        D1[(D_1: локальная выборка)]
+        Dk[(D_k: локальная выборка)]
+        DN[(D_N: локальная выборка)]
+        P21_1[2.1 Локальное обучение\n+ per-sample клиппинг R\nклиент 1]
+        P21_k[2.1 Локальное обучение\n+ per-sample клиппинг R\nклиент k]
+        P21_N[2.1 Локальное обучение\n+ per-sample клиппинг R\nклиент N]
+    end
+
+    subgraph ENCLAVE["SGX-анклав (SCONE) — граница доверенной среды"]
+        P25[2.5 Удалённая аттестация\n+ установление сессии]
+        P22[2.2 Робастная агрегация\nFedRoLA мягкая фильтрация]
+        P23[2.3 Адаптивный клиппинг норм\n+ шум центральной ДП\nN 0 &#963;&#178;&#931;&#178;]
+        P24[2.4 Журналирование\nобезличенных метрик]
+        D2[(D2: глобальная модель w_t)]
+        D5[(D5: репутация клиентов\n&#945;/&#946; + состояние &#963;)]
+    end
+
+    D3[(D3: журнал обучения\nобезличенные агрегаты)]
+    D4[(D4: конфигурация + параметры защиты\n&#949; &#948; R S_max)]
+    ANALYST((Аналитик))
+    ATTEST((Служба удалённой\nаттестации))
+    ATTACKER((Нарушитель))
+
+    %% AS-IS потоки: локальное обучение
+    D1 --> P21_1
+    Dk --> P21_k
+    DN --> P21_N
+
+    %% TO-BE: рассылка w_t подписывается анклавом и уходит клиентам
+    D2 -- w_t --> P25
+    P25 -- "w_t + sig" --> P21_1
+    P25 -- "w_t + sig" --> P21_k
+    P25 -- "w_t + sig" --> P21_N
+
+    %% Обновления приходят в анклав через аутентиф. канал
+    P21_1 -- "&#916;_1 аутентиф." --> P22
+    P21_k -- "&#916;_k аутентиф." --> P22
+    P21_N -- "&#916;_N аутентиф." --> P22
+
+    %% Внутренний поток анклава
+    P22 -- "&#916;^clip взвеш." --> P23
+    P22 -- "update &#945;/&#946;" --> D5
+    P23 -- w_{t+1} --> D2
+    P23 --> P24
+    P24 --> D3
+    P24 -- "metrics w_T + quote" --> ANALYST
+
+    %% Аттестация
+    P25 -- attestation_quote --> ATTEST
+    ATTEST -- attested --> P25
+
+    %% Конфигурация от аналитика
+    ANALYST --> D4
+    D4 --> P25
+
+    %% Нарушитель: оставшиеся поверхности
+    ATTACKER -. "компрометация клиента\n точка воздействия 2" .-> P21_k
+    ATTACKER -. "перехват канала\n закрыт аутентификацией" .-x P22
+
+    classDef asis fill:#f5f5f5,stroke:#555,stroke-width:1px
+    classDef asisProc fill:#e8f0fe,stroke:#1a73e8,stroke-width:1px
+    classDef new fill:#d9ead3,stroke:#38761d,stroke-width:2px
+    classDef newStore fill:#fff2cc,stroke:#bf9000,stroke-width:2px
+    classDef ext fill:#fff,stroke:#c00,stroke-width:1px,stroke-dasharray:5 5
+
+    class D1,Dk,DN,D2,D3 asis
+    class P21_1,P21_k,P21_N asisProc
+    class P22,P23,P24,P25,D5,D4 new
+    class ATTEST,ANALYST,ATTACKER ext
+
+    style ENCLAVE fill:#fff2cc,stroke:#bf9000,stroke-width:3px,stroke-dasharray:8 4

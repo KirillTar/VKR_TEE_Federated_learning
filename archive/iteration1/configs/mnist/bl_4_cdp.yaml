@@ -1,0 +1,40 @@
+# BL-4: FedAvg + Central DP, no attacks. n=200, q=0.2, sample_rate=0.2.
+# SNR = clients_per_round / (sigma * sqrt(d)), d=9000, clients_per_round=40
+# ε=5:  σ=2.876, SNR=0.147 → FAIL (too noisy)
+# ε=7:  σ=2.212, SNR=0.191 → MARGINAL (~60-75%?)
+# ε=10: σ=1.707, SNR=0.247 → MARGINAL/WORKS (~88-93%?)
+# ε=15: σ=1.304, SNR=0.323 → WORKS (~92-95%?)
+# ε=20: σ=1.095, SNR=0.385 → WORKS (~93-96%?)
+# ε=50: σ=0.675, SNR=0.625 → WORKS (~95-97%?)
+# ε=∞:  σ=0,     SNR=∞   → baseline
+# Run with: --sweep epsilon=5,name=bl4_eps5 epsilon=7,name=bl4_eps7 etc.
+name: bl_4_cdp_mnist
+dataset: mnist
+data_dir: ./data
+alpha: 0.5
+seed: 42
+
+n_clients: 200
+clients_per_round: 40
+n_rounds: 200
+local_epochs: 5
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: fedavg
+m_assumed: 0
+
+use_dp: true
+epsilon: 20.0
+delta: 1.0e-5
+dp_accounting: opacus
+sigma: null
+clip_max: 2.0
+
+attack: none
+m_real: 0
+
+log_every: 10
+save_dir: ./results/baselines_mnist

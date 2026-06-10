@@ -1,0 +1,22 @@
+# SCONE/Docker environment: python:3.11-slim-bookworm, CPU only
+# glibc 2.36 compatible
+
+# PyTorch CPU (specific version for SCONE compatibility)
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch==2.5.1+cpu
+torchvision==0.20.1+cpu
+
+# Federated learning (same version as GPU env)
+flwr==1.13.1
+
+# Differential privacy (same version as GPU env — confirmed cross-compatible)
+opacus==1.5.2
+
+# SCONE-specific: inside enclave limit threads manually
+# (SCONE intercepts threading — set OMP_NUM_THREADS=1 in Dockerfile)
+
+# Data / utils
+numpy>=1.26
+pyyaml>=6.0
+tqdm>=4.66

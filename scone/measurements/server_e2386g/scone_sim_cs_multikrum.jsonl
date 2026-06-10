@@ -1,0 +1,37 @@
+{"event": "config", "label": "sim_cs", "scenario": "cs", "aggregation": "multi_krum", "d": 89834, "n_clients": 40, "m_assumed": 12, "f": 28, "sigma": 13.14453125, "n_rounds": 30, "warmup": 5}
+{"event": "round", "label": "sim_cs", "round": 0, "warmup": true, "dt_ms": 446.142, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 1, "warmup": true, "dt_ms": 12.946, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 2, "warmup": true, "dt_ms": 11.291, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 3, "warmup": true, "dt_ms": 11.001, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 4, "warmup": true, "dt_ms": 10.619, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 5, "warmup": false, "dt_ms": 11.956, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 6, "warmup": false, "dt_ms": 9.483, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 7, "warmup": false, "dt_ms": 10.249, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 8, "warmup": false, "dt_ms": 9.517, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 9, "warmup": false, "dt_ms": 9.388, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 10, "warmup": false, "dt_ms": 10.329, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 11, "warmup": false, "dt_ms": 9.931, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 12, "warmup": false, "dt_ms": 10.003, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 13, "warmup": false, "dt_ms": 10.125, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 14, "warmup": false, "dt_ms": 9.94, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 15, "warmup": false, "dt_ms": 11.084, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 16, "warmup": false, "dt_ms": 9.34, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 17, "warmup": false, "dt_ms": 8.797, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 18, "warmup": false, "dt_ms": 8.969, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 19, "warmup": false, "dt_ms": 11.315, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 20, "warmup": false, "dt_ms": 10.153, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 21, "warmup": false, "dt_ms": 10.854, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 22, "warmup": false, "dt_ms": 9.846, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 23, "warmup": false, "dt_ms": 10.326, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 24, "warmup": false, "dt_ms": 9.781, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 25, "warmup": false, "dt_ms": 9.494, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 26, "warmup": false, "dt_ms": 10.092, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 27, "warmup": false, "dt_ms": 10.698, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 28, "warmup": false, "dt_ms": 11.131, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 29, "warmup": false, "dt_ms": 9.555, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 30, "warmup": false, "dt_ms": 10.171, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 31, "warmup": false, "dt_ms": 9.81, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 32, "warmup": false, "dt_ms": 9.65, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 33, "warmup": false, "dt_ms": 9.744, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "round", "label": "sim_cs", "round": 34, "warmup": false, "dt_ms": 10.604, "rss_mib": NaN, "peak_rss_mib": 1300.3}
+{"event": "summary", "label": "sim_cs", "scenario": "cs", "aggregation": "multi_krum", "n_rounds_measured": 30, "mean_ms": 10.078, "median_ms": 9.971, "p95_ms": 11.232, "std_ms": 0.691, "peak_rss_mib": 1300.3}

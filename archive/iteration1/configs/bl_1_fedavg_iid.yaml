@@ -1,0 +1,26 @@
+# BL-1: FedAvg, IID (alpha=10), no attacks/defenses (~83-86%)
+name: bl_1_fedavg_iid
+dataset: cifar10
+data_dir: ./data
+alpha: 10.0
+seed: 42
+
+n_clients: 20
+n_rounds: 200
+local_epochs: 5
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: fedavg
+m_assumed: 0
+
+use_dp: false
+epsilon: .inf
+
+attack: none
+m_real: 0
+
+log_every: 10
+save_dir: ./results/baselines

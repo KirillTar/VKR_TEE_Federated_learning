@@ -1,0 +1,37 @@
+{"event": "config", "label": "native_docker_cs", "scenario": "cs", "aggregation": "multi_krum", "d": 89834, "n_clients": 40, "m_assumed": 12, "f": 28, "sigma": 13.14453125, "n_rounds": 30, "warmup": 5}
+{"event": "round", "label": "native_docker_cs", "round": 0, "warmup": true, "dt_ms": 29.819, "rss_mib": 305.6, "peak_rss_mib": 319.0}
+{"event": "round", "label": "native_docker_cs", "round": 1, "warmup": true, "dt_ms": 18.001, "rss_mib": 341.5, "peak_rss_mib": 341.5}
+{"event": "round", "label": "native_docker_cs", "round": 2, "warmup": true, "dt_ms": 12.23, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 3, "warmup": true, "dt_ms": 7.19, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 4, "warmup": true, "dt_ms": 6.953, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 5, "warmup": false, "dt_ms": 6.683, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 6, "warmup": false, "dt_ms": 6.8, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 7, "warmup": false, "dt_ms": 6.681, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 8, "warmup": false, "dt_ms": 6.723, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 9, "warmup": false, "dt_ms": 7.848, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 10, "warmup": false, "dt_ms": 6.563, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 11, "warmup": false, "dt_ms": 6.653, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 12, "warmup": false, "dt_ms": 7.807, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 13, "warmup": false, "dt_ms": 6.949, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 14, "warmup": false, "dt_ms": 6.762, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 15, "warmup": false, "dt_ms": 6.677, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 16, "warmup": false, "dt_ms": 6.806, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 17, "warmup": false, "dt_ms": 6.75, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 18, "warmup": false, "dt_ms": 7.649, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 19, "warmup": false, "dt_ms": 6.884, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 20, "warmup": false, "dt_ms": 7.903, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 21, "warmup": false, "dt_ms": 6.903, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 22, "warmup": false, "dt_ms": 7.963, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 23, "warmup": false, "dt_ms": 7.249, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 24, "warmup": false, "dt_ms": 6.907, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 25, "warmup": false, "dt_ms": 6.846, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 26, "warmup": false, "dt_ms": 6.832, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 27, "warmup": false, "dt_ms": 6.798, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 28, "warmup": false, "dt_ms": 6.908, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 29, "warmup": false, "dt_ms": 6.896, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 30, "warmup": false, "dt_ms": 6.824, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 31, "warmup": false, "dt_ms": 6.772, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 32, "warmup": false, "dt_ms": 7.118, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 33, "warmup": false, "dt_ms": 6.674, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "round", "label": "native_docker_cs", "round": 34, "warmup": false, "dt_ms": 6.596, "rss_mib": 351.1, "peak_rss_mib": 351.1}
+{"event": "summary", "label": "native_docker_cs", "scenario": "cs", "aggregation": "multi_krum", "n_rounds_measured": 30, "mean_ms": 6.981, "median_ms": 6.828, "p95_ms": 7.878, "std_ms": 0.408, "peak_rss_mib": 351.5}

@@ -1,0 +1,39 @@
+# Exp 9: Non-IID sweep (alpha in {0.1, 0.5, 10.0})
+# MKrum + CDP eps=4, 4 attacks × 3 seeds
+name: exp9_noniid_alpha05_alie
+dataset: cifar10
+data_dir: ./data
+alpha: 0.5   # override: 0.1 | 0.5 | 10.0
+seed: 42
+
+n_clients: 20
+n_rounds: 200
+local_epochs: 5
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: multi_krum
+m_assumed: 6
+f: 14
+
+use_dp: true
+epsilon: 4.0
+delta: 1.0e-5
+dp_accounting: opacus
+sigma: null
+
+attack: alie   # override: label_flip | sign_flip | backdoor
+m_real: 4
+flip_source: 5
+flip_target: 3
+
+backdoor_gamma: 10.0
+backdoor_trigger_size: 5
+backdoor_target_label: 0
+backdoor_poison_ratio: 0.5
+backdoor_epochs: 10
+
+log_every: 10
+save_dir: ./results/exp9

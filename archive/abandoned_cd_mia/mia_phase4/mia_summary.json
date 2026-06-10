@@ -1,0 +1,53 @@
+{
+  "no_dp": {
+    "mta_mean": 0.8734,
+    "mta_std": 0.0031,
+    "auc_loss_mean": 0.5054,
+    "auc_loss_std": 0.0029,
+    "auc_conf_mean": 0.5054,
+    "auc_conf_std": 0.0037,
+    "member_loss_mean_mean": 0.3323,
+    "member_loss_mean_std": 0.0142,
+    "nonmember_loss_mean_mean": 0.3772,
+    "nonmember_loss_mean_std": 0.0081,
+    "member_conf_mean_mean": 0.8499,
+    "member_conf_mean_std": 0.0031,
+    "nonmember_conf_mean_mean": 0.8395,
+    "nonmember_conf_mean_std": 0.0028,
+    "n_seeds": 3
+  },
+  "dp_eps10": {
+    "mta_mean": 0.8085,
+    "mta_std": 0.0074,
+    "auc_loss_mean": 0.5056,
+    "auc_loss_std": 0.007,
+    "auc_conf_mean": 0.5059,
+    "auc_conf_std": 0.0075,
+    "member_loss_mean_mean": 0.5304,
+    "member_loss_mean_std": 0.025,
+    "nonmember_loss_mean_mean": 0.5633,
+    "nonmember_loss_mean_std": 0.0357,
+    "member_conf_mean_mean": 0.7654,
+    "member_conf_mean_std": 0.0084,
+    "nonmember_conf_mean_mean": 0.758,
+    "nonmember_conf_mean_std": 0.0109,
+    "n_seeds": 3
+  },
+  "dp_eps20": {
+    "mta_mean": 0.8433,
+    "mta_std": 0.0063,
+    "auc_loss_mean": 0.5054,
+    "auc_loss_std": 0.0056,
+    "auc_conf_mean": 0.5052,
+    "auc_conf_std": 0.0059,
+    "member_loss_mean_mean": 0.4195,
+    "member_loss_mean_std": 0.0136,
+    "nonmember_loss_mean_mean": 0.4637,
+    "nonmember_loss_mean_std": 0.0168,
+    "member_conf_mean_mean": 0.8099,
+    "member_conf_mean_std": 0.0059,
+    "nonmember_conf_mean_mean": 0.8011,
+    "nonmember_conf_mean_std": 0.0083,
+    "n_seeds": 3
+  }
+}

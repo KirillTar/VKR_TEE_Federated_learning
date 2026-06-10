@@ -1,0 +1,37 @@
+%% DFD TO-BE — контекстная диаграмма (уровень 0).
+%% Защищённая версия: + служба аттестации, ключи сессии, квитанция анклава.
+%% Цвета:
+%%   серый — элементы, присутствовавшие в AS-IS (без изменений)
+%%   зелёный — НОВЫЕ элементы и потоки TO-BE
+%% Рендер: https://mermaid.live → PNG/SVG.
+
+flowchart LR
+    CLIENT((Клиент\n— владелец D_k))
+    ANALYST((Аналитик))
+    ATTEST((Служба удалённой\nаттестации))
+
+    SYS[Защищённое\nфедеративное обучение\nTO-BE<br/>сервер в SGX-анклаве]
+
+    CLIENT -- "&#916;_k<br/>(аутентиф. канал)" --> SYS
+    SYS -- "w_t + подпись анклава" --> CLIENT
+    ANALYST -- "config + параметры защиты<br/>(&#949;, &#948;, R, S_max)" --> SYS
+    SYS -- "metrics, w_T + quote" --> ANALYST
+
+    SYS -- "attestation_quote" --> ATTEST
+    ATTEST -- "attested<br/>(квитанция)" --> SYS
+    ATTEST -- "верификация quote" --> CLIENT
+
+    classDef asis fill:#f5f5f5,stroke:#555,stroke-width:1px
+    classDef new fill:#d9ead3,stroke:#38761d,stroke-width:2px
+    classDef newext fill:#fff,stroke:#38761d,stroke-width:2px,stroke-dasharray:5 5
+
+    class CLIENT,ANALYST asis
+    class SYS new
+    class ATTEST newext
+
+    linkStyle 0 stroke:#38761d,stroke-width:2px
+    linkStyle 1 stroke:#38761d,stroke-width:2px
+    linkStyle 3 stroke:#38761d,stroke-width:2px
+    linkStyle 4 stroke:#38761d,stroke-width:2px
+    linkStyle 5 stroke:#38761d,stroke-width:2px
+    linkStyle 6 stroke:#38761d,stroke-width:2px

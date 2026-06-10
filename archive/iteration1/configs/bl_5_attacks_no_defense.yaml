@@ -1,0 +1,35 @@
+# BL-5: Each attack without defenses (verify attacks work)
+# Run with --override attack=X for each: label_flip, sign_flip, alie, backdoor
+name: bl_5_labelflip_no_defense
+dataset: cifar10
+data_dir: ./data
+alpha: 0.5
+seed: 42
+
+n_clients: 20
+n_rounds: 200
+local_epochs: 5
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: fedavg
+m_assumed: 0
+
+use_dp: false
+epsilon: .inf
+
+attack: label_flip
+m_real: 4
+flip_source: 5
+flip_target: 3
+
+backdoor_gamma: 20.0   # gamma = n for model replacement
+backdoor_trigger_size: 5
+backdoor_target_label: 0
+backdoor_poison_ratio: 0.5
+backdoor_epochs: 10
+
+log_every: 10
+save_dir: ./results/baselines

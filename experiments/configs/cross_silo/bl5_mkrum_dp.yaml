@@ -1,0 +1,33 @@
+# BL-5 CS: Multi-Krum + record-level DP ε=4, no attack
+name: cs_bl5_mkrum_dp
+dataset: svhn
+model_name: svhn_cnn
+data_dir: ./data
+alpha: 0.5
+
+n_clients: 50
+clients_per_round: 40
+n_rounds: 200
+local_epochs: 1
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: multi_krum
+m_assumed: 12
+f: 28
+
+use_dp: true
+dp_level: record
+epsilon: 4.0
+delta: 1.0e-5
+record_clip: 5.0
+clip_max: 2.0
+adaptive_client_clip: true
+
+attack: none
+m_real: 0
+
+log_every: 10
+save_dir: ./results/cross_silo

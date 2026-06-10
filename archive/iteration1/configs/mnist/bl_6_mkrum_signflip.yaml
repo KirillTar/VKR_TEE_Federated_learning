@@ -1,0 +1,29 @@
+# BL-6: Multi-Krum + Sign-Flip (per-client). n=200, m_real=40, m_assumed=12, f=28.
+# Expected: TPR ~70-100% (per-client SF diverse → Krum detects), MTA close to BL-3.
+name: bl_6_mkrum_signflip_mnist
+dataset: mnist
+data_dir: ./data
+alpha: 0.5
+seed: 42
+
+n_clients: 200
+clients_per_round: 40
+n_rounds: 200
+local_epochs: 5
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: multi_krum
+m_assumed: 12
+f: 28
+
+use_dp: false
+epsilon: .inf
+
+attack: sign_flip
+m_real: 40
+
+log_every: 10
+save_dir: ./results/baselines_mnist

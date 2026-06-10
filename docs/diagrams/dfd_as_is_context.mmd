@@ -1,0 +1,19 @@
+%% DFD AS-IS — контекстная диаграмма (уровень 0).
+%% Один обобщённый процесс, две внешние сущности.
+%% Рендер: https://mermaid.live → PNG/SVG.
+
+flowchart LR
+    CLIENT((Клиент\n— владелец D_k))
+    ANALYST((Аналитик))
+
+    SYS[Федеративное обучение\nAS-IS]
+
+    CLIENT -- "&#916;_k" --> SYS
+    SYS -- "w_t" --> CLIENT
+    ANALYST -- "config\n(гиперпараметры)" --> SYS
+    SYS -- "metrics, w_T" --> ANALYST
+
+    classDef process fill:#e8f0fe,stroke:#1a73e8,stroke-width:1px
+    classDef ext fill:#fff,stroke:#555,stroke-width:1px
+    class SYS process
+    class CLIENT,ANALYST ext

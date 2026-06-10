@@ -1,0 +1,41 @@
+# Exp-Sub: Subsampling rate sweep. n=200, ε=10 (marginal for n=200).
+# Fixed: ε=10, ALIE attack, MKrum+CDP. Sweep: q ∈ {0.15,0.2,0.3,0.5,1.0}.
+# clients_per_round = n_clients * q = {30,40,60,100,200}.
+# SNR(q) ≈ (q*n) / (sigma(q) * sqrt(d)). Privacy amplification: sigma decreases with q.
+# q=0.15: clients_per_round=30, sigma≈2.8, SNR≈0.119 → may fail at ε=10
+# q=0.20: clients_per_round=40, sigma≈1.71, SNR≈0.247 → marginal
+# q=0.30: clients_per_round=60, sigma≈1.42, SNR≈0.446 → works
+# q=0.50: clients_per_round=100, sigma≈1.18, SNR≈0.893 → works well
+# q=1.0:  clients_per_round=200, sigma≈1.00, SNR≈2.11  → excellent
+# Note: f = clients_per_round - m_assumed (dynamic, set null)
+name: exp_sub_base_mnist
+dataset: mnist
+data_dir: ./data
+alpha: 0.5
+seed: 42
+
+n_clients: 200
+clients_per_round: 40
+n_rounds: 200
+local_epochs: 5
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: multi_krum
+m_assumed: 12
+f: null
+
+use_dp: true
+epsilon: 10.0
+delta: 1.0e-5
+dp_accounting: opacus
+sigma: null
+
+attack: alie
+alpha: 0.1
+m_real: 40
+
+log_every: 10
+save_dir: ./results/exp_sub_mnist

@@ -1,0 +1,31 @@
+# GPU environment: RTX 5070Ti (Blackwell sm_120), WSL2, CUDA 12.8
+# Install PyTorch nightly FIRST (required for sm_120 support):
+#   pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu128
+
+--extra-index-url https://download.pytorch.org/whl/nightly/cu128
+
+# ML core
+torch>=2.12.0.dev0
+torchvision>=0.22.0.dev0
+
+# Federated learning
+flwr==1.13.1
+
+# Differential privacy (confirmed compatible with torch nightly)
+opacus==1.5.2
+
+# Data / analysis
+numpy>=1.26
+pandas>=2.0
+matplotlib>=3.8
+seaborn>=0.13
+scikit-learn>=1.4
+scipy>=1.12
+
+# Config / utils
+pyyaml>=6.0
+tqdm>=4.66
+
+# Jupyter for exploration
+jupyter>=1.0
+ipykernel>=6.0

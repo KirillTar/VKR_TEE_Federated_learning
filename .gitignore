@@ -1,0 +1,38 @@
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Data (large, download automatically)
+data/
+
+# Experiment results (generated)
+experiments/results/
+results/
+
+# Checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# Jupyter
+.ipynb_checkpoints/
+analysis/notebooks/.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+venv/
+.venv/
+
+# Logs
+*.log
+
+CLAUDE.md
+.scone_creds.txt

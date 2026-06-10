@@ -1,0 +1,27 @@
+# BL-6: Multi-Krum vs Sign-Flip (should achieve TPR=100%)
+name: bl_6_mkrum_signflip
+dataset: cifar10
+data_dir: ./data
+alpha: 0.5
+seed: 42
+
+n_clients: 20
+n_rounds: 200
+local_epochs: 5
+batch_size: 32
+lr: 0.01
+momentum: 0.9
+weight_decay: 1.0e-4
+
+aggregation: multi_krum
+m_assumed: 6
+f: 14
+
+use_dp: false
+epsilon: .inf
+
+attack: sign_flip
+m_real: 4
+
+log_every: 10
+save_dir: ./results/baselines
