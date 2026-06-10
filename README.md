@@ -13,8 +13,6 @@
 | DP | client-level | record-level (R=5) |
 | m_real (доля вредоносных) | 80 (40%) | 20 (40%) |
 
-Краткое описание архитектуры, тезисов и параметров — в `CLAUDE.md`.
-
 ## Структура репозитория
 
 ```
@@ -51,8 +49,7 @@
 │   ├── gpu.txt                 RTX 5070Ti / WSL2 / CUDA 12.8 / torch nightly
 │   └── scone.txt               CPU-only для SCONE-контейнера
 │
-├── results/                    Артефакты прогонов (в git-ignored)
-└── archive/                    История итерации 1 + заброшенные направления
+└── results/                    Артефакты прогонов (в git-ignored)
 ```
 
 ## Установка
@@ -123,28 +120,9 @@ python3.11 -m venv .venv_scone
 | `n_rounds`, `lr`, `lr_end`, `alpha` | Длина обучения, LR decay, non-IID концентрация |
 | `fedrola_chi`, `fedrola_full_layer` | FedRoLA-гиперпараметры |
 
-## TEE overhead
-
-Деплоймент через SCONE + SGX:
-
-```bash
-# SIM mode (локально, без реального анклава)
-bash scone/scone_build.sh --sim
-
-# HW mode (Azure DCsv3 / Intel Xeon + SGX)
-bash scone/scone_build.sh
-```
-
-Замеры overhead проводятся отдельно от ML-пайплайна. Сценарии и методика —
-в `scone/` + глава 5.6 ВКР.
 
 ## Железо / окружение разработки
 
 - RTX 5070Ti (Blackwell, sm_120) через WSL2, Python 3.12, torch nightly cu128
 - Опции параллелизма: `OMP/MKL/OPENBLAS/NUMEXPR_NUM_THREADS=2`, `max_parallel=6`
 - Типичная скорость: CD FedRoLA ~5 c/раунд, CS DP ~4.5 run/ч (T=200)
-
-## Архив
-
-`archive/` содержит итерацию 1 (Multi-Krum + FLAME, 333 runs) и заброшенное
-CD MIA направление. Не часть текущей работы — см. `archive/README.md`.
